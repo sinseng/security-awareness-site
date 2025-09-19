@@ -1,6 +1,4 @@
-# Let's generate a simple HTML file (index.html) with a success message for Security Awareness website.
-
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -60,17 +58,10 @@ html_content = """<!DOCTYPE html>
 </head>
 <body>
   <div class="container">
-    <h1> Submission Successful</h1>
+    <h1>✅ Submission Successful</h1>
     <p>Your account has been submitted for verification.</p>
     <p><span class="loader"></span> Verification will take 1–3 hours. We will notify you once it is completed.</p>
     <a href="/" class="btn">Return to Home</a>
   </div>
 </body>
-</html>"""
-
-# Save to file
-file_path = "/mnt/data/index.html"
-with open(file_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-file_path
+</html>
