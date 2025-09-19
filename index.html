@@ -13,22 +13,27 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      padding: 20px;
     }
     .card {
       background: #fff;
-      padding: 40px;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       text-align: center;
-      width: 350px;
+      max-width: 400px;
+      width: 100%;
     }
     h1 {
       color: #007bff;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
     p {
       color: #333;
       margin: 10px 0;
+      font-size: 1rem;
+      line-height: 1.4;
     }
     .btn {
       display: inline-block;
@@ -39,7 +44,7 @@
       border: none;
       border-radius: 5px;
       text-decoration: none;
-      font-size: 16px;
+      font-size: 1rem;
       cursor: pointer;
     }
     .btn:hover {
@@ -47,8 +52,21 @@
     }
     .footer {
       margin-top: 20px;
-      font-size: 12px;
+      font-size: 0.8rem;
       color: #666;
+    }
+
+    /* 🔹 针对手机优化 */
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.2rem;
+      }
+      p, .btn {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -57,7 +75,6 @@
     <h1>✅ Submission Successful</h1>
     <p>Your account has been submitted for verification.</p>
     <p>Verification will take 1–3 hours. We will notify you once it is completed.</p>
-    <a href="#" class="btn" onclick="window.close()">Close Page</a>
     <div class="footer">© 2025 Company IT Department</div>
   </div>
 </body>
