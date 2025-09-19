@@ -3,79 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submission Successful</title>
+  <title>Form Submitted</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #007bff, #0056b3);
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      background: #fff;
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 400px;
       padding: 20px;
     }
-    .card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 400px;
-      width: 100%;
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 4px solid #4CAF50;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+    }
+    .icon::before {
+      content: "✔";
+      font-size: 40px;
+      color: #4CAF50;
     }
     h1 {
-      color: #007bff;
-      margin-bottom: 15px;
+      color: #4CAF50;
+      margin: 0 0 10px;
       font-size: 1.5rem;
     }
     p {
-      color: #333;
-      margin: 10px 0;
       font-size: 1rem;
-      line-height: 1.4;
+      margin: 5px 0;
+      color: #555;
     }
-    .btn {
+    a {
       display: inline-block;
       margin-top: 20px;
-      padding: 10px 20px;
-      background: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
       text-decoration: none;
+      color: #3f51b5;
+      font-weight: bold;
       font-size: 1rem;
-      cursor: pointer;
     }
-    .btn:hover {
-      background: #0056b3;
-    }
-    .footer {
-      margin-top: 20px;
-      font-size: 0.8rem;
-      color: #666;
-    }
-
-    /* 🔹 针对手机优化 */
-    @media (max-width: 480px) {
-      .card {
-        padding: 20px;
-      }
-      h1 {
-        font-size: 1.2rem;
-      }
-      p, .btn {
-        font-size: 0.9rem;
-      }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>✅ Submission Successful</h1>
-    <p>Your account has been submitted for verification.</p>
-    <p>Verification will take 1–3 hours. We will notify you once it is completed.</p>
-    <div class="footer">© 2025 Company IT Department</div>
+  <div class="container">
+    <div class="icon"></div>
+    <h1>Form submitted successfully!</h1>
+    <p>Thank you! The form has been submitted successfully.</p>
+    <p>We will reply to you soon!</p>
+    <a href="#">Go back</a>
   </div>
 </body>
 </html>
