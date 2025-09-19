@@ -1,0 +1,76 @@
+# Let's generate a simple HTML file (index.html) with a success message for Security Awareness website.
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Awareness - Submission Successful</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f8fb;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      padding: 40px;
+      margin: auto;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #2c7be5;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
+    }
+    .loader {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 3px solid #ccc;
+      border-top: 3px solid #2c7be5;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2c7be5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #1a5bb8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Submission Successful</h1>
+    <p>Your account has been submitted for verification.</p>
+    <p><span class="loader"></span> Verification will take 1–3 hours. We will notify you once it is completed.</p>
+    <a href="/" class="btn">Return to Home</a>
+  </div>
+</body>
+</html>"""
+
+# Save to file
+file_path = "/mnt/data/index.html"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+file_path
